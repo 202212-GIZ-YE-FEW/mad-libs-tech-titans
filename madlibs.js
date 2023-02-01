@@ -97,9 +97,15 @@ function Initialize(){
   outputElementsArray = Array.from(outputElements);
   inputElements.forEach((input) => {
   input.addEventListener("input", updateText);
-  input.addEventListener("keyup", (event) => {
+ 
+// Hotkeys: When the user presses Enter in an input, it should move the cursor to the next input in the story.
+  input.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
-      console.log('Enter key pressed')
+      event.preventDefault();
+      let nextInput = inputElementsArray[inputElementsArray.indexOf(input) + 1];
+      if (nextInput) {
+        nextInput.focus();
+      }
     }
   });
 });
