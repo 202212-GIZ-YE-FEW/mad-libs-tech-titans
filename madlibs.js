@@ -26,6 +26,11 @@
  * There are multiple ways to do this, but you may want to use regular expressions.
  * Please go through this lesson: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/
  */
+
+let inputElements,outputElements,inputElementsArray,outputElementsArray="";
+let edit=document.getElementById("madLibsEdit");
+let result=document.getElementById("madLibsPreview");
+
 function parseStory(rawStory) {
   let obj=[];
 
@@ -58,8 +63,27 @@ return obj;
  * You'll want to use the results of parseStory() to display the story on the page.
  */
 getRawStory().then(parseStory).then((processedStory) => {
-  console.log(processedStory);
+  for(let ele of processedStory) {
+   if(ele.hasOwnProperty('pos')){
+     let input=document.createElement("input");
+     input.type="text";
+     input.placeholder=ele["pos"];
+    //  input.setAttribute("value",ele.word);
+     input.maxLength=20;
+
+     edit.appendChild(input);
+   }else{
+     edit.innerHTML+=" "+ele.word;
+   }
+   console.log(ele);
+  }
+  result.innerHTML=edit.innerHTML;
+
+ Initialize();
+ 
 });
 
-//test
-console.log("hi");
+
+
+
+
