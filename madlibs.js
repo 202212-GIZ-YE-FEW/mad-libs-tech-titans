@@ -97,6 +97,11 @@ function Initialize(){
   outputElementsArray = Array.from(outputElements);
   inputElements.forEach((input) => {
   input.addEventListener("input", updateText);
+  input.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+      console.log('Enter key pressed')
+    }
+  });
 });
 }
 
