@@ -27,8 +27,28 @@
  * Please go through this lesson: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/
  */
 function parseStory(rawStory) {
-  // Your code here.
-  return {}; // This line is currently wrong :)
+  let obj=[];
+
+  let properties = rawStory.split(' ');
+    properties.forEach(function(singleword) {
+      if(/(\S+)\[(.*?)\]/g.test(singleword)){
+
+        if(/\[(n*?)\]/.test(singleword)){
+          obj.push({word : /(.*?)\[/.exec(singleword)[1], pos : "noun"});
+          // return noun;
+        }else if(/\[(v*?)\]/.test(singleword)){
+          obj.push({word : /(.*?)\[/.exec(singleword)[1], pos : "verb"});
+          // return verb;
+        }else if(/\[(a*?)\]/.test(singleword)){
+         obj.push({word : /(.*?)\[/.exec(singleword)[1], pos : "adjective"});
+          // return adjective;
+        }
+
+      }else{
+        obj.push({word : singleword});
+    }
+  });
+return obj;
 }
 
 /**
@@ -40,3 +60,6 @@ function parseStory(rawStory) {
 getRawStory().then(parseStory).then((processedStory) => {
   console.log(processedStory);
 });
+
+//test
+console.log("hi");
