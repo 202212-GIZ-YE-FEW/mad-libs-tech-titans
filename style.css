@@ -1,4 +1,5 @@
-* {
+
+*{
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
@@ -36,13 +37,16 @@ img {
     flex-wrap: wrap;
 }
 
+
 #madLibsEdit, #madLibsPreview {
     color: white;
     padding: 20px;
     border-radius: 20px;
-    /* background: url("../images/replit.jpg");
-    opacity: 0.7; */
-    /* background-size: cover; */
+    background: url("images/replit.jpg");
+    background-position: right top;
+    background-repeat: no-repeat;
+    /* opacity: 0.7;  */
+    /* background-size: cover;  */
     line-height: 40px;
     font-size: 16px;
     font-family: 'Times New Roman', Times, serif;
@@ -63,25 +67,6 @@ img {
     font-size: 16px;
     color: rgb(80, 195, 210);
     transition: all 0.3s ease-in-out;
-}
-
-#madLibsEdit  input[type="text"]:focus {
-    border: 2px solid #024931;
-    color:  rgb(12, 43, 24);
-     background-color:rgb(239, 245, 241); 
-    }
-
-
-#madLibsPreview input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(5, 196, 225, 0.733);
-    width: 120px;
-    pointer-events: none;
-    color: rgb(23, 139, 177);
-    text-align: center;
-    font-size: 16px;
-    margin: 0px 10px;
 }
 
 #madLibsEdit  input[type="text"]:focus {
@@ -129,7 +114,7 @@ img {
 }
 
 #madLibsEdit {
-   background: url("replit.jpg");
+   background: url("images/replit.jpg");
     opacity: 0.7;
     background-size: cover;
 }
@@ -160,4 +145,6 @@ img {
     }
 
   }
+
+
 
