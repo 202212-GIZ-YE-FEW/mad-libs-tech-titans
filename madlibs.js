@@ -83,6 +83,28 @@ getRawStory().then(parseStory).then((processedStory) => {
  
 });
 
+function updateText() {
+  inputElementsArray.forEach((element) => {
+      let index = inputElementsArray.indexOf(element);
+      let value = inputElementsArray[index].value; 
+      outputElementsArray[index].value= value ? value : "";
+     });
+}
+function Initialize(){
+  inputElements = document.querySelectorAll("#madLibsEdit input");
+  outputElements=document.querySelectorAll("#madLibsPreview input");
+  inputElementsArray = Array.from(inputElements);
+  outputElementsArray = Array.from(outputElements);
+  inputElements.forEach((input) => {
+  input.addEventListener("input", updateText);
+  input.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+      console.log('Enter key pressed')
+    }
+  });
+});
+}
+
 
 
 
