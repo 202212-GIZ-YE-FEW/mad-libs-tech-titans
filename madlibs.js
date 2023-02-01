@@ -83,6 +83,14 @@ getRawStory().then(parseStory).then((processedStory) => {
  
 });
 
+function updateText() {
+  inputElementsArray.forEach((element) => {
+      let index = inputElementsArray.indexOf(element);
+      let value = inputElementsArray[index].value; 
+      outputElementsArray[index].value= value ? value : "";
+     });
+}
+
 
 
 
