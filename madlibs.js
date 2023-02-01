@@ -90,6 +90,15 @@ function updateText() {
       outputElementsArray[index].value= value ? value : "";
      });
 }
+function Initialize(){
+  inputElements = document.querySelectorAll("#madLibsEdit input");
+  outputElements=document.querySelectorAll("#madLibsPreview input");
+  inputElementsArray = Array.from(inputElements);
+  outputElementsArray = Array.from(outputElements);
+  inputElements.forEach((input) => {
+  input.addEventListener("input", updateText);
+});
+}
 
 
 
