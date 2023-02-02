@@ -1,1 +1,8 @@
-Louis[n] went[v] to the store[n], and it was fun[a]. He taught[v] the class[n].
+
+Louis[n] went[v] to the store[n],and had a great time[a]. He[n] was  in search of some school[n] supplies he needed[v] for his class. While at the store[n], he ran[v] into one of his students who was struggling with a project. Louis offered[v] to help and ended up teaching the student[n] a few new things about the subject[n].
+
+Feeling proud[a] of himself, Louis[n] headed to the checkout counter to pay[v] for his items[n]. As he was waiting[v] in line[n], he noticed[v] a group of kids[n] who seemed to be having trouble[a] with their homework[n]. Louis[n] decided[v] to help them as well[a] and ended up spending the rest of the day at the store[n], teaching[v] and assisting[v] the kids[n] with their school[n] work[n].
+
+By the end of the day, Louis[n] was[v] exhausted but also extremely satisfied[a] with what he had accomplished[v].
+
+
