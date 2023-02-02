@@ -43,10 +43,10 @@ img {
     padding: 20px;
     border-radius: 20px;
     background: url("images/replit.jpg");
-    background-position: right top;
+    background-position: top right ;
     background-repeat: no-repeat;
-    /* opacity: 0.7;  */
-    /* background-size: cover;  */
+    opacity: 0.2; 
+    background-size: cover; 
     line-height: 40px;
     font-size: 16px;
     font-family: 'Times New Roman', Times, serif;
@@ -127,6 +127,7 @@ img {
  }
 
  @media only screen and (max-width:525px) {
+   
     img{
         width: 200px;
         height: auto;
@@ -143,6 +144,8 @@ img {
         overflow: hidden;
         
     }
+   
+
 
   }
 
@@ -192,8 +195,4 @@ img {
     box-shadow: 0 0 20px blue;
   }
   
-
-body{
-    overflow: hidden;
-}
 
