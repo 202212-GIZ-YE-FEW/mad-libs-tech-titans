@@ -27,7 +27,6 @@
  * Please go through this lesson: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/
  */
 
-
 /**
 This code is for a mad libs generator. 
  It defines the input and output elements, and the arrays for these elements. 
@@ -65,29 +64,26 @@ function parseStory(rawStory) {
       if (/\[(n*?)\]/.test(singleword)) {
         obj.push({
           word: /(.*?)\[/.exec(singleword)[1],
-          pos: "noun"
+          pos: "noun",
         });
         // Add the word as a noun to the object array
-
       } else if (/\[(v*?)\]/.test(singleword)) {
         obj.push({
           word: /(.*?)\[/.exec(singleword)[1],
-          pos: "verb"
+          pos: "verb",
         });
         // Add the word as a verb to the object array
-
       } else if (/\[(a*?)\]/.test(singleword)) {
         obj.push({
           word: /(.*?)\[/.exec(singleword)[1],
-          pos: "adjective"
+          pos: "adjective",
         });
         // Add the word as an adjective to the object array
-
       }
     } else {
       // If the test fails, add the word to the object array without a part of speech
       obj.push({
-        word: singleword
+        word: singleword,
       });
     }
   });
@@ -155,7 +151,6 @@ getRawStory()
     Initialize();
   });
 
-
 /**
  * This code defines the updateText function 
 which updates the text in the outputElementsArray based on the values in the inputElementsArray. 
@@ -166,15 +161,14 @@ Then it uses that index to get the value of the corresponding element in inputEl
   If the value of the input element is falsy, the value of the corresponding output element is set to an empty string.
  */
 
-
 function updateText() {
-   // Loop through each element in the inputElementsArray
+  // Loop through each element in the inputElementsArray
   inputElementsArray.forEach((element) => {
-       // Get the index of the current element
+    // Get the index of the current element
     let index = inputElementsArray.indexOf(element);
-     // Get the value of the current element
+    // Get the value of the current element
     let value = inputElementsArray[index].value;
-     // Set the value of the corresponding element in the outputElementsArray to be the value of the input element
+    // Set the value of the corresponding element in the outputElementsArray to be the value of the input element
     // If the value of the input element is falsy, set the value of the output element to an empty string
     outputElementsArray[index].value = value ? value : "";
   });
@@ -191,32 +185,30 @@ The function also adds a keydown event listener to each input,
  the function will determine the next input in the story and focus on it.
  */
 
-
-
 function Initialize() {
   // Select input elements in the madLibsEdit and madLibsPreview sections
   inputElements = document.querySelectorAll("#madLibsEdit input");
   outputElements = document.querySelectorAll("#madLibsPreview input");
 
-   // Convert the input elements from a NodeList to an Array
+  // Convert the input elements from a NodeList to an Array
   inputElementsArray = Array.from(inputElements);
   outputElementsArray = Array.from(outputElements);
 
-    // Add event listeners for each input element
+  // Add event listeners for each input element
   inputElements.forEach((input) => {
     // input event listener to call updateText when the input value changes
 
     input.addEventListener("input", updateText);
 
     // Hotkeys: When the user presses Enter in an input, it should move the cursor to the next input in the story.
-       // keydown event listener to listen for the Enter key
+    // keydown event listener to listen for the Enter key
     input.addEventListener("keydown", function (event) {
       if (event.key === "Enter") {
-           // Get the next input in the story
+        // Get the next input in the story
         // event.preventDefault();
         let nextInput =
           inputElementsArray[inputElementsArray.indexOf(input) + 1];
-               // Focus on the next input if it exists
+        // Focus on the next input if it exists
         if (nextInput) {
           nextInput.focus();
         }
@@ -224,27 +216,54 @@ function Initialize() {
     });
   });
 }
+/**
+ * This  code selects the element with class "animation-container", 
+then uses a for loop to create 5 div elements with class "animation". 
+Each iteration of the loop sets random width, height, left position and animation duration 
+for each flame div element, which are then appended to the container element.
+ */
 
-
+// Select the element with class "animation-container"
 const container = document.querySelector(".animation-container");
+// Loop 5 times to create flame div elements with random properties
 for (let i = 0; i < 5; i++) {
+    // Create a div element and add the class "animation"
   const flame = document.createElement("div");
   flame.classList.add("animation");
+    // Set random width for the flame div
   flame.style.width = `${Math.random() * 35 + 20}px`;
+    // Set random height for the flame div
+
   flame.style.height = `${Math.random() * 30 + 30}px`;
+    // Set random left position for the flame div
+
   flame.style.left = `${Math.random() * 100}%`;
+    // Set random animation duration for the flame div
+
   flame.style.animationDuration = `${Math.random() * 3 + 3}s`;
+   // Append the flame div to the container
   container.appendChild(flame);
 }
 
-  
+/**
+ * 
+This  code selects an HTML element with the id "play-button"
+ and another element with id "song", 
+ then adds a click event listener to the "play-button" element. 
+ The function inside the event listener checks if the "song" element is paused, 
+ and if so, it plays the song, otherwise it pauses the song. 
+ The "play" and "pause" methods are native methods of the HTMLAudioElement interface,
+  which "song" element is an instance of.
+
+
+ */
 
 
 
 const playButton = document.getElementById("play-button");
 const song = document.getElementById("song");
 
-playButton.addEventListener("click", function() {
+playButton.addEventListener("click", function () {
   if (song.paused) {
     song.play();
   } else {
