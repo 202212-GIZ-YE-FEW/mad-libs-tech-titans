@@ -224,3 +224,30 @@ function Initialize() {
     });
   });
 }
+
+
+const container = document.querySelector(".animation-container");
+for (let i = 0; i < 5; i++) {
+  const flame = document.createElement("div");
+  flame.classList.add("animation");
+  flame.style.width = `${Math.random() * 35 + 20}px`;
+  flame.style.height = `${Math.random() * 30 + 30}px`;
+  flame.style.left = `${Math.random() * 100}%`;
+  flame.style.animationDuration = `${Math.random() * 3 + 3}s`;
+  container.appendChild(flame);
+}
+
+  
+
+
+
+const playButton = document.getElementById("play-button");
+const song = document.getElementById("song");
+
+playButton.addEventListener("click", function() {
+  if (song.paused) {
+    song.play();
+  } else {
+    song.pause();
+  }
+});
